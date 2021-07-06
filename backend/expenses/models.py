@@ -9,8 +9,10 @@ class Expense(models.Model):
     )
     amount = models.PositiveIntegerField()
     photo = models.OneToOneField(
-        "users.User",
+        "photo.Photo",
         on_delete=models.CASCADE,
+        null=True,
+        blank=True,
         related_name="expense_photo",
     )
 
